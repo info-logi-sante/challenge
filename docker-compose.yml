@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  chall-postgresql:
+    image: chall-postgresql
+    container_name: chall-postgresql
+    build:
+      context: .
+      dockerfile: .docker/chall-postgresql/Dockerfile
+    env_file:
+      - ./docker.env
+    command:
+      - 'postgres'
